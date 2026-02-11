@@ -1,0 +1,9 @@
+matplotlib
+scikit-learn
+seaborn
+joblib
+pandas
+pytest
+langchain-chroma
+langchain-community 
+chromadb
