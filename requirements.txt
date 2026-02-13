@@ -4,6 +4,8 @@ seaborn
 joblib
 pandas
 pytest
+sentence-transformers
 langchain-chroma
 langchain-community 
 chromadb
+numpy
