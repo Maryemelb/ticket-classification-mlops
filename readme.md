@@ -16,9 +16,7 @@
         │   └── reference/            # Baseline dataset used by Evidently for drift comparison
         │
         ├── notebooks/
-        │   ├── 01_eda.ipynb          # Exploratory Data Analysis: class distribution, text 
-        │   ├── 02_embedding_tests.ipynb # Testing HuggingFace embedding models
-        │   └── 03_model_experiments.ipynb # Training experiments & model comparison
+        │   ├── eda.ipynb          # Exploratory Data Analysis: class distribution, text 
         │
         ├── src/
         │   ├── config/

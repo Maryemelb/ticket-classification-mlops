@@ -33,8 +33,9 @@ def generate_embeddings(df):
             ids=batch_ids
         )
         print(f"Processed up to row {i + len(batch_texts)}")
+    return df
 
-df= load_data()
-clean_df= cleaning(df)
-encoded_df= encoding(clean_df)
-embed= generate_embeddings(encoded_df)
+# df= load_data()
+# clean_df= cleaning(df)
+# encoded_df= encoding(clean_df)
+# embed= generate_embeddings(encoded_df)
