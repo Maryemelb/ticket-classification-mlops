@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: chromadbticket
+spec:
+  selector:
+    app: chromadbticket
+  ports:
+  - protocol: TCP
+    port: 8000
+    targetPort: 8000
+---
+apiVersion: apps/v1
+kind: StatefulSet # Changed from Deployment
+metadata:
+  name: chromadbticket
+spec:
+  serviceName: "chromadbticket"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chromadbticket
+  template:
+    metadata:
+      labels:
+        app: chromadbticket
+    spec:
+      containers:
+      - name: chromadbticket
+        image: chromadb/chroma 
+        ports:
+        - containerPort: 8000
+        env:
+        - name: PERSIST_DIRECTORY
+          value: "/index/index"
+        volumeMounts:
+        - name: chroma-data
+          mountPath: /index 
+  volumeClaimTemplates: 
+  - metadata:
+      name: chroma-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 10Gi 
