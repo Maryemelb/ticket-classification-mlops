@@ -14,15 +14,14 @@ def generate_embeddings(df):
     columns = ['fusion_email']
     texts = df[columns].fillna("").apply(lambda row: " ".join([" ".join(x) if isinstance(x, list) else str(x) for x in row]), axis=1).tolist()
 
-    batch_size = 128  # Increased from 50; 128-256 is usually the "sweet spot"
+    batch_size = 128 
     print('start3')
     for i in range(0, len(texts), batch_size):
         batch_texts = texts[i:i+batch_size]
         print('start')
-        # Embed ONLY this batch
         batch_vectors = embedding_model.embed_documents(batch_texts)
         
-        # Normalize only this batch
+        # Normalize only 
         batch_vectors = normalize(np.array(batch_vectors), norm="l2")
         
         batch_ids = [str(j) for j in range(i, i+len(batch_texts))]
