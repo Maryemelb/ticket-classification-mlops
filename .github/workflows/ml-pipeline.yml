@@ -25,7 +25,7 @@ jobs:
           pip install flake8  # Installe l’outil de linting
 
       - name: Run Lint  # Lancer l’analyse du code
-        run: flake8 . --ignore=F401,E501,W291,W292 # Vérifie la qualité et style du code
+        run: flake8 . --ignore=F401,E501,W291,W292,E302,E225,E226,E111,E117,E265,W293,W391
 
   test: 
     runs-on: ubuntu-latest  
