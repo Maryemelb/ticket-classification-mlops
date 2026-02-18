@@ -1,8 +1,8 @@
 
 from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import stopwords
-import nltk
-from src.data.load_data import load_data
+# import nltk
+# from src.data.load_data import load_data
 def cleaning(df):
     
     #fustion_text
@@ -37,7 +37,7 @@ def cleaning(df):
        
     df.update(filtered_df_de)
 
-    #fusion tags
+    # fusion tags
     df['tags']= df['tag_1']+df['tag_2']+df['tag_3']+df['tag_4']+df['tag_5']+df['tag_5']+df['tag_6']+df['tag_7']+df['tag_8']
     df.drop(['subject', 'body','tag_1','tag_2','tag_3','tag_4','tag_5', 'tag_6', 'tag_7','tag_8'], axis=1, inplace=True)
     return df
