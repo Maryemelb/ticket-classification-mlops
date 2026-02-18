@@ -1,7 +1,7 @@
 from sklearn.discriminant_analysis import StandardScaler
-from src.data.encoding import encoding
-from src.data.cleaning import cleaning
-from src.data.load_data import load_data
+# from src.data.encoding import encoding
+# from src.data.cleaning import cleaning
+# from src.data.load_data import load_data
 from src.vectors_store.chromadb_client import client
 from sklearn.model_selection import train_test_split
 import numpy as np

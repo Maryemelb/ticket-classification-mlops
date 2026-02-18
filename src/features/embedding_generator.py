@@ -1,10 +1,9 @@
 from langchain_community.embeddings import HuggingFaceEmbeddings
-import os
-from src.data.cleaning import cleaning
+# from src.data.cleaning import cleaning
 from src.vectors_store.chromadb_client import client
 from sklearn.preprocessing import normalize
-from src.data.encoding import encoding
-from src.data.load_data import load_data
+# from src.data.encoding import encoding
+# from src.data.load_data import load_data
 import numpy as np
 embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 collection_vect = client.get_or_create_collection(
@@ -34,7 +33,9 @@ def generate_embeddings(df):
         print(f"Processed up to row {i + len(batch_texts)}")
     return df
 
+
 # df= load_data()
 # clean_df= cleaning(df)
 # encoded_df= encoding(clean_df)
 # embed= generate_embeddings(encoded_df)
+

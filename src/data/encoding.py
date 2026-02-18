@@ -3,8 +3,8 @@ from sklearn.preprocessing import OneHotEncoder
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
-from src.data.cleaning import cleaning
-from src.data.load_data import load_data
+# from src.data.cleaning import cleaning
+# from src.data.load_data import load_data
 
 def encoding(df):
         
