@@ -15,14 +15,14 @@ def split(df):
     embeddings= np.array(results['embeddings'])
     y= df['type']
 
-    x_others= df.drop(['fusion_email','tags','answer','language', 'type'], axis=1).apply(pd.to_numeric, errors='coerce').fillna(0).values
+    x_others= df.drop(['fusion_email' ,'tags' ,'answer' ,'language' , 'type'] , axis=1).apply(pd.to_numeric , errors='coerce').fillna(0).values
 
-    X = np.hstack([embeddings, x_others]) 
+    X = np.hstack([embeddings , x_others]) 
     #Normalis
     scaler = StandardScaler()
     X= scaler.fit_transform(X)
-    X_train,X_test,y_train, y_test= train_test_split(X,y, test_size=0.3,train_size=0.7,shuffle=True, random_state=42, stratify=y)
-    return X_train,X_test,y_train, y_test
+    X_train , X_test ,y_train, y_test= train_test_split(X ,y , test_size=0.3 ,train_size=0.7 ,shuffle=True , random_state=42 , stratify=y)
+    return X_train ,X_test ,y_train , y_test
 
 
 # df= load_data()
